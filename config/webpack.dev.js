@@ -1,6 +1,6 @@
 const merge = require('webpack-merge')
 const base = require('./webpack.base')
-
+const path = require('path')
 
 
 module.exports = merge(base, {
@@ -9,6 +9,7 @@ module.exports = merge(base, {
   devServer: {
     contentBase: path.resolve(__dirname, '../src/assets'),
     port: 9000,
-    compress: true
-  }
+    compress: true,
+    stats: 'minimal'
+  },
 })
